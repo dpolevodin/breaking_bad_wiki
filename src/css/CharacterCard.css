@@ -1,0 +1,42 @@
+:root {
+    --card-white: #fff;
+    --card-light: rgb(202, 221, 236);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.character-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 0.25rem solid transparent;
+    background-color: var(--card-white);
+    box-shadow: 0 0.5rem 2rem var(--shadow-color), 0 0.25rem 0.5rem var(--shadow-color), 0 0.125rem 0.125rem var(--shadow-color);
+}
+
+.character-card:hover {
+    border-color: var(--card-light);
+}
+
+.character-card__title {
+    line-height: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem
+}
+
+.character-card__img {
+    display: flex;
+    width: 4rem;
+    /* height: 2rem; */
+    margin-bottom: 1rem;
+}
+
+.character-card__text {
+    display: flex;
+    line-height: 1rem;
+    font-size: 1rem;
+}

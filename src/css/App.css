@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.App__title {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.App__list {
+  display: flex;
+  width: 75%;
+}
+
+.App__item {
+  display: flex;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.App__item:last-child {
+  margin: 0;
+}
