@@ -1,11 +1,11 @@
 function characterCard(props) {
-    const {name, id, img, birthday} = props
-    console.log('src ---', img, 'id: ', id, 'name: ', name)
+    const {nickname, name, img, birthday} = props
     return (
         <div className="character-card">
-            <hi className="character-card__title">{name}</hi>
-            <img className="character-card__img" src={img} alt={id} />
-            <span className="character-card__text">{birthday}</span>
+            <h1 className="character-card__title">{nickname}</h1>
+            <img className="character-card__img" src={img} alt={nickname} />
+            <span className="character-card__text">Real name: {name}</span>
+            <span className="character-card__text">Birthday: {birthday}</span>
         </div>
     )
 }

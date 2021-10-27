@@ -1,27 +1,100 @@
+:root {
+  --background-dark: #1f1f1f;
+  --background-white: #fff;
+  --background-shadow: rgba(0, 0, 0, 0.25);;
+}
+
 .App {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 4rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .App__title {
   display: flex;
   margin-bottom: 4rem;
+  font-weight: bold;
 }
 
 .App__list {
   display: flex;
-  width: 75%;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4rem;
 }
 
 .App__item {
   display: flex;
   margin-right: 2rem;
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 .App__item:last-child {
   margin: 0;
+}
+
+.App__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 80%;
+  padding: 4rem;
+}
+
+.App__navigation {
+  position: relative;
+  margin-left: -75vh;
+  display: flex;
+  flex: 1 0 20%;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rem 1rem 0 1rem;
+  height: 100vh;
+  width: 20%;
+  color: var(--background-white);
+  background-color: var(--background-dark);
+  transition-duration: 0.4s;
+  box-shadow: 0 0.5rem 2rem var(--background-shadow), 0 0.25rem 0.5rem var(--background-shadow), 0 0.125rem 0.125rem var(--background-shadow);
+}
+
+.App__navigation::after {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: url('../img/icons_bb_white.png');
+  right: -2rem;
+  top: 4rem;
+  width: 4rem;
+  height: 6rem;
+  background-color: var(--background-dark);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem var(--background-dark)
+}
+
+.App__navigation:hover {
+  margin: 0;
+}
+
+.App__navigation-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App__navigation-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: var(--background-white);
+  cursor: pointer;
+}
+
+.App__navigation-item:hover {
+  text-shadow: 0 0 1rem var(--background-white);
 }

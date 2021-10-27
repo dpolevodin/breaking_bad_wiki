@@ -9,8 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 10rem;
-    height: 10rem;
+    width: 16rem;
+    height: 16rem;
     padding: 1rem;
     border-radius: 0.75rem;
     border: 0.25rem solid transparent;
@@ -23,16 +23,22 @@
 }
 
 .character-card__title {
+    margin-bottom: 1rem;
     line-height: 1rem;
     font-size: 1rem;
-    margin-bottom: 1rem
+    font-weight: bold;
 }
 
 .character-card__img {
     display: flex;
     width: 4rem;
-    /* height: 2rem; */
+    border-radius: 0.25rem;
     margin-bottom: 1rem;
+    transition-duration: 0.4s;
+}
+
+.character-card__img:hover {
+    width: 20rem;
 }
 
 .character-card__text {
