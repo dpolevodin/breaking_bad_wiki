@@ -1,31 +1,31 @@
 import '../src/css/reset.css';
 import '../src/css/App.css';
 import '../src/css/CharacterCard.css';
-import API from "./utils/API";
+// import API from "./utils/API";
 import CharacterCard from '../src/components/CharacterCard';
 
-// const characters = function (callback) {
-//   API.get('https://www.breakingbadapi.com/api/characters').then(
-//     result => {
-//       let data = result.data
-//       console.log(data[0])
-//       callback(data)
-//     },
-//     error => console.log(error)
-//   )
-// }
-let url = 'https://www.breakingbadapi.com/api/characters/1'
+const url = 'https://www.breakingbadapi.com/api/characters'
 
-const getCharacters = (url) => {
-  return fetch(url)
-    .then(response => response.json())
+const characterData = []
+
+async function getCharactersData(url) {
+  let result = fetch(url)
+  .then(response => response.json()
+  .then(data => {
+    for (let item of data) {
+      characterData.push(item)
+    }
+  return result
+  })
+  )
 }
-let results = []
-const characters = getCharacters(url).then(result => results.push(...result))
 
-console.log('*******', characters)
-console.log('-------', results)
-console.log('-------', Array.isArray(results))
+getCharactersData(url)
+
+console.log('данные в characterData: ', characterData)
+console.log('Проверка на массив characterData: ', Array.isArray(characterData))
+console.log('Вывод 1- го элемента массива characterData[0]: ', characterData[0])
+console.log('Длина массива characterData: ', characterData.length)
 
 const objChar = [{
     char_id: 1,
@@ -62,6 +62,20 @@ const characterList = objChar.map((item) =>
     <CharacterCard name = {item.name} nickname = {item.nickname} img={item.img} birthday={item.birthday} />
   </li>
   )
+
+function drawItem(charList) {
+  console.log('drawItem: ', charList)
+  const characterList = charList.map((item) => 
+  <li className="App__item" key={item.char_id.toString()}>
+    <CharacterCard name = {item.name} nickname = {item.nickname} img={item.img} birthday={item.birthday} />
+  </li>
+  )
+  return characterList
+}
+
+const finalDraw  = drawItem(characterData)
+
+console.log(finalDraw)
 
 const navigationItemsData = ['Characters', 'Episodes', 'Quote']
 const navigationItemsList = navigationItemsData.map((item) => 
