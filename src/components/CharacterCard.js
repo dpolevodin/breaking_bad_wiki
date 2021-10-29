@@ -1,4 +1,4 @@
-function characterCard(props) {
+function CharacterCard(props) {
     const {nickname, name, img, birthday} = props
     return (
         <div className="character-card">
@@ -10,4 +10,4 @@ function characterCard(props) {
     )
 }
 
-export default characterCard
+export default CharacterCard
