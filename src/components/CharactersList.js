@@ -3,19 +3,22 @@ import React, { useState } from 'react';
 import CharacterCard from './CharacterCard'
 
 
+function getCharactersData() {
+    const url = 'https://www.breakingbadapi.com/api/characters'
+    const characterData = []
 
-const url = 'https://www.breakingbadapi.com/api/characters'
-const characterData = []
-
-fetch('https://www.breakingbadapi.com/api/characters')
-  .then(response => response.json())
-  .then(data => characterData.push(...data))
+    fetch(url)
+        .then(response => response.json())
+        .then(data => characterData.push(...data))
+    
+    return characterData
+}
 
 function CharactersList(props) {
-    const [characters, getCharacters] = useState(characterData)
-    console.log(characterData)
+    const [characters, getCharacters] = useState(getCharactersData())
+
     setTimeout(()=>{}, 2000)
-    
+
     return (
         characters.map((item) => 
             <li className="App__item" key={item.char_id.toString()}>
