@@ -1,18 +1,23 @@
 :root {
   --background-dark: #1f1f1f;
   --background-white: #fff;
-  --background-shadow: rgba(0, 0, 0, 0.25);;
+  --background-shadow: rgba(0, 0, 0, 0.25);
+  --background-light: rgb(93, 110, 124);
+  --background-bright: rgb(255, 153, 0);
+  --header-height: 16rem;
 }
 
 .App {
   display: flex;
   justify-content: center;
   font-family: 'Inter', sans-serif;
+  background: url(/src/img/main-bg.jpg) no-repeat;
+  background-size: 100%, 100%;
 }
 
 .App__title {
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 20rem;
   font-weight: bold;
 }
 
@@ -39,12 +44,12 @@
   flex-direction: column;
   align-items: center;
   flex: 1 0 80%;
-  padding: 4rem;
+  padding: 4rem 4rem 4rem 10rem;
 }
 
 .App__navigation {
-  position: relative;
-  margin-left: -75vh;
+  position: fixed;
+  left: -20rem;
   display: flex;
   flex: 1 0 20%;
   flex-direction: column;
@@ -56,6 +61,10 @@
   background-color: var(--background-dark);
   transition-duration: 0.4s;
   box-shadow: 0 0.5rem 2rem var(--background-shadow), 0 0.25rem 0.5rem var(--background-shadow), 0 0.125rem 0.125rem var(--background-shadow);
+}
+
+.App__navigation:hover {
+  left: 0;
 }
 
 .App__navigation::after {
@@ -72,10 +81,6 @@
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   box-shadow: 0 0 0.5rem var(--background-dark)
-}
-
-.App__navigation:hover {
-  margin: 0;
 }
 
 .App__navigation-list {
@@ -98,3 +103,80 @@
 .App__navigation-item:hover {
   text-shadow: 0 0 1rem var(--background-white);
 }
+
+.App__header-secondary {
+  margin-bottom: 2rem;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - var(--header-height))
+}
+
+.main-page__image {
+  display: flex;
+  width: 24rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+} 
+
+.main-page__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  border: 0.0825rem solid var(--background-shadow);
+  background-color: var(--background-dark);
+  color: var(--background-white);
+  cursor: pointer;
+}
+
+.main-page__button:hover {
+  border: 0.0825rem solid var(--background-light);
+  box-shadow: 0 0 0.5rem var(--background-light);
+}
+
+.main-page__image:hover + .main-page__button {
+  animation: animation-button 0.75s 1;
+  border: 0.0825rem solid var(--background-bright);
+  box-shadow: 0 0 0.5rem var(--background-bright);
+}
+
+@keyframes animation-button {
+  10% {
+    transform: rotate(0.0125turn);
+  }
+  20% {
+    transform: rotate(-0.0125turn);
+  }
+  30% {
+    transform: rotate(0.0125turn);
+  }
+  40% {
+    transform: rotate(-0.0125turn);
+  }
+  50% {
+    transform: rotate(0.0125turn);
+  }
+  60% {
+    transform: rotate(-0.0125turn);
+  }
+  70% {
+    transform: rotate(0.0125turn);
+  }
+  80% {
+    transform: rotate(-0.0125turn);
+  }
+  90% {
+    transform: rotate(0.0125turn);
+  }
+  100% {
+    transform: rotate(-0.0125turn);
+  }
+} 
