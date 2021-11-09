@@ -86,6 +86,19 @@
   box-shadow: 0 0 0.5rem var(--background-dark)
 }
 
+.App__navigation-radio {
+  display: none;
+}
+
+.App__navigation-form {
+  
+}
+
+.App_navigation-title {
+  display: flex;
+  align-items: center;
+}
+
 .App__navigation-list {
   display: flex;
   flex-direction: column;
