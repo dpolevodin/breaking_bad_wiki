@@ -1,5 +1,6 @@
 import CharactersList from "./CharactersList"
 import RandomCharacter from "./RandomCharacter"
+import Button from "./Button"
 
 
 function MainPage({page}) {
@@ -7,7 +8,11 @@ function MainPage({page}) {
 
     const renderMapping = {
         'Random Character': function() {
-            return <RandomCharacter/>
+            return (
+                <div>
+                   <RandomCharacter />
+                </div>
+            )
         },
         'Characters': function() {
             return <CharactersList/>
@@ -23,11 +28,11 @@ function MainPage({page}) {
         },
     }
  
-    return renderMapping[page]()
-
-        // <div className="main-page">
-        //     <button className="main-page__button"> Let's start!</button>
-        // </div>
+    return (
+      <div>
+            {renderMapping[page]()}
+      </div>  
+    )
 }
 
 export default MainPage

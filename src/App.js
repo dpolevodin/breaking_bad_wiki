@@ -1,11 +1,10 @@
 import '../src/css/reset.css';
 import '../src/css/App.css';
 import '../src/css/CharacterCard.css';
-// import CharactersList from '../src/components/CharactersList';
+import '../src/components/RandomCharacterCard/RandomCharacterCard.css'
 import NavigationItems from '../src/components/NavigationItems';
 import MainPage from '../src/components/MainPage'
 import { useState } from 'react';
-// import BackgroundImage from '../src/components/BackgroundImage';
 
 function App() {
   const [navItem, setNavItem] = useState('Random Character')

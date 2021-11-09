@@ -2,6 +2,7 @@
   --background-dark: #1f1f1f;
   --background-white: #fff;
   --background-shadow: rgba(0, 0, 0, 0.25);
+  --background-shadow-navitem: #b8f2e6;
   --background-light: rgb(93, 110, 124);
   --background-color: rgba(0, 0, 0, 0.315);
   --background-bright: rgb(255, 153, 0);
@@ -16,7 +17,7 @@
 
 .App__title {
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-weight: bold;
   font-size: 2rem;
   color: var(--background-dark);
@@ -90,12 +91,15 @@
   display: none;
 }
 
-.App__navigation-form {
+/* .App__navigation-form {
 
-}
+} */
 
 .App__random-character {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App_navigation-title {
@@ -121,7 +125,7 @@
 }
 
 .App__navigation-item:hover {
-  text-shadow: 0 0 1rem var(--background-white);
+  text-shadow: 0 0 1rem var(--background-shadow-navitem);
 }
 
 .App__header-secondary {
@@ -139,7 +143,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
+  width: 16rem;
   height: 4rem;
   border-radius: 0.5rem;
   font-size: 1.25rem;
@@ -152,7 +156,7 @@
 
 .main-page__button:hover {
   border: 0.0825rem solid var(--background-light);
-  box-shadow: 0 0 4rem var(--background-white);
+  box-shadow: 0 0 4rem var(--background-shadow-navitem);
 }
 
 @keyframes animation-button {

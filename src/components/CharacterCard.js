@@ -1,5 +1,4 @@
 function CharacterCard({nickname, name, img, birthday}) {
-    // const {nickname, name, img, birthday} = props
     return (
         <div className="character-card">
             <h1 className="character-card__title">{nickname}</h1>

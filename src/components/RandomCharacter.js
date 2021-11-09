@@ -1,6 +1,6 @@
 import React from 'react';
-import CharacterCard from './CharacterCard'
-
+import RandomCharacterCard from './RandomCharacterCard/RandomCharacterCard'
+import Button from "./Button"
 
 class RandomCharacter extends React.Component {
     constructor(props) {
@@ -18,14 +18,19 @@ class RandomCharacter extends React.Component {
                 }
                 )
             }
+    
+    handleClick = () => {
+        this.componentDidMount()
+    }
             
     render() {
         return (
             <div className="App__random-character">
                 {this.state.character.map((item) => 
-                    <CharacterCard {...item}  key={item.id}/>
+                    <RandomCharacterCard {...item} />
                     )
                 }
+                <Button text='Get another character!' onClick={this.handleClick}/>
             </div>
         )
         

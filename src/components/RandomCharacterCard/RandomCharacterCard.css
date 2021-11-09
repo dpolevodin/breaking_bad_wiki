@@ -1,0 +1,103 @@
+:root {
+    --background-dark: #1f1f1f;
+    --background-white: #fff;
+    --background-shadow: rgba(0, 0, 0, 0.25);
+    --background-shadow-navitem: #b8f2e6;
+    --background-light: rgb(93, 110, 124);
+    --background-color: rgba(0, 0, 0, 0.315);
+    --background-bright: rgb(255, 153, 0);
+    --header-height: 16rem;
+  }
+
+.character-card__wrapper {
+    display: flex;
+    position: relative;
+    width: 24rem;
+    min-height: 36rem;
+    flex-grow: 1;
+    perspective: 60rem;
+    margin-bottom: 2rem;
+}
+
+.character-card-random__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background-bright);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.character-card__wrapper.v:hover .front, .character-card__wrapper.v.flip .front {
+    transform: rotateX(180deg);
+}
+
+.character-card__wrapper.v:hover .back, .character-card__wrapper.v.flip .back {
+    transform: rotateX(0deg);
+}
+
+.character-card__wrapper.v .back {
+    transform: rotateX(-180deg);
+}
+
+.character-card__wrapper.h:hover .front, .character-card__wrapper.h.flip .front {
+    transform: rotateY(180deg);
+}
+
+.character-card__wrapper.h:hover .back, .character-card__wrapper.h.flip .back {
+    transform: rotateY(0deg);
+}
+
+.character-card__wrapper.h .back {
+    transform: rotateY(-180deg);
+}
+
+.character-card__wrapper .front, .character-card__wrapper .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: var(--background-dark);
+    border-radius: 1rem;
+    padding: 2rem;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+}
+
+.character-card__wrapper .character-card__img{
+    width: 100%;
+}
+
+.character-card-random__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.character-card-random__item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.character-card-random__item_green {
+    color: green;
+}
+
+.character-card-random__item_red {
+    color: red;
+}
+
+.character-card-random__item_orange {
+    color: orange;
+}

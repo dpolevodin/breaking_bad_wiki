@@ -33,24 +33,6 @@
     font-weight: bold;
 }
 
-.App__random-character .character-card {
-    width: 36rem;
-    height: 36rem;
-  }
-
-.App__random-character .character-card__title {
-    font-size: 2rem;
-}
-
-.App__random-character .character-card__img {
-    width: 16rem;
-}
-
-.App__random-character .character-card__text {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-}
-
 .character-card__img {
     display: flex;
     width: 4rem;
