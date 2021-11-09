@@ -1,4 +1,5 @@
 import CharactersList from "./CharactersList"
+import RandomCharacter from "./RandomCharacter"
 
 
 function MainPage({page}) {
@@ -6,7 +7,7 @@ function MainPage({page}) {
 
     const renderMapping = {
         'Random Character': function() {
-            return <div>{navItems[0]}</div>
+            return <RandomCharacter/>
         },
         'Characters': function() {
             return <CharactersList/>

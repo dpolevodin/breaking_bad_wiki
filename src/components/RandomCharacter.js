@@ -1,13 +1,35 @@
-function RandomCharacter(props) {
-    const {nickname, name, img, birthday} = props
-    return (
-        <div className="character-card">
-            <h1 className="character-card__title">{nickname}</h1>
-            <img className="character-card__img" src={img} alt={nickname} />
-            <span className="character-card__text">Real name: {name}</span>
-            <span className="character-card__text">Birthday: {birthday}</span>
-        </div>
-    )
+import React from 'react';
+import CharacterCard from './CharacterCard'
+
+
+class RandomCharacter extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+          character: []
+      }
+    }
+
+    componentDidMount = () => {
+        fetch('https://www.breakingbadapi.com/api/character/random')
+                .then(response => response.json())
+                .then(result => {
+                    this.setState({character: result})
+                }
+                )
+            }
+            
+    render() {
+        return (
+            <div className="App__random-character">
+                {this.state.character.map((item) => 
+                    <CharacterCard {...item}  key={item.id}/>
+                    )
+                }
+            </div>
+        )
+        
+}
 }
 
 export default RandomCharacter

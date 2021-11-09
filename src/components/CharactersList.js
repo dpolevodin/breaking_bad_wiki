@@ -14,7 +14,6 @@ class CharactersList extends React.Component {
         fetch('https://www.breakingbadapi.com/api/characters')
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result)
                     this.setState({characters: result})
                 }
                 )
@@ -25,7 +24,7 @@ class CharactersList extends React.Component {
             <ul className="App__list">
                 {this.state.characters.map((item) => 
                     <li className="App__item" key={item.char_id.toString()}>
-                    <CharacterCard name = {item.name} nickname = {item.nickname} img={item.img} birthday={item.birthday} />
+                    <CharacterCard {...item} />
                     </li>
                     )
                 }
