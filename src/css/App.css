@@ -2,6 +2,7 @@
   --background-dark: #1f1f1f;
   --background-white: #fff;
   --background-shadow: rgba(0, 0, 0, 0.25);
+  --background-button-active: rgba(0, 0, 0, 0.75);
   --background-shadow-navitem: #b8f2e6;
   --background-light: rgb(93, 110, 124);
   --background-color: rgba(0, 0, 0, 0.315);
@@ -11,7 +12,7 @@
 }
 
 body {
-  background-color: var(--background-main);
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
 }
 
 .App {
@@ -190,6 +191,7 @@ body {
   font-size: 1.25rem;
   border: 0.0825rem solid var(--background-shadow);
   background-color: var(--background-dark);
+  
   color: var(--background-white);
   cursor: pointer;
   animation: animation-button 1s infinite;
@@ -198,6 +200,11 @@ body {
 .main-page__button:hover {
   border: 0.0825rem solid var(--background-light);
   box-shadow: 0 0 4rem var(--background-shadow-navitem);
+  animation: none;
+}
+
+.main-page__button:active {
+  background-color: var(--background-button-active);
 }
 
 .loading-element {
