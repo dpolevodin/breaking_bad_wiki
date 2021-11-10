@@ -1,6 +1,7 @@
 import CharactersList from "./CharactersList"
 import RandomCharacter from "./RandomCharacter"
 
+
 function MainPage({page}) {
     const navItems = ['Random Character', 'Characters', 'Episodes', 'Quote', 'Search']
 

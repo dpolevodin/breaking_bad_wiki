@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CharacterCard from './CharacterCard/CharacterCard'
 import Pagination from "./Pagination/Pagination"
-
+import Loading from "./Loading"
 
 class CharactersList extends React.Component {
     constructor(props) {
@@ -9,6 +9,7 @@ class CharactersList extends React.Component {
       this.state = {
           characters: [],
           currentPage: 0,
+          isLoading: false,
       }
     }
 
@@ -19,18 +20,22 @@ class CharactersList extends React.Component {
     }
 
     componentDidMount = (page = 0) => {
-        console.log(this.state.currentPage)
+        this.setState({isLoading: true})
         fetch(`https://www.breakingbadapi.com/api/characters?limit=10&offset=${page}`)
                 .then(response => response.json())
                 .then(result => {
-                    this.setState({characters: result})
+                    this.setState({
+                        characters: result,
+                        isLoading: false
+                    })
                 }
                 )
             }    
     
     render() {
         return (
-            <div>
+            <div className="characters__list">
+                {this.state.isLoading && (<Loading />)}
                 <ul className="App__list">
                 {this.state.characters.map((item) => 
                     <li className="App__item" key={item.char_id.toString()}>
