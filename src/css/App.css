@@ -7,6 +7,11 @@
   --background-color: rgba(0, 0, 0, 0.315);
   --background-bright: rgb(255, 153, 0);
   --header-height: 16rem;
+  --background-main: #c2c5aa;
+}
+
+body {
+  background-color: var(--background-main);
 }
 
 .App {
@@ -16,11 +21,48 @@
 }
 
 .App__title {
-  display: flex;
-  margin-bottom: 2rem;
+  position: relative;
+  display: block;
+  margin-bottom: 4rem;
   font-weight: bold;
   font-size: 2rem;
   color: var(--background-dark);
+  animation: title-animation 0.5s ease-out;
+}
+
+.App__title::first-letter {
+  position: absolute;
+  color: white;
+  margin-right: 0.25rem;
+  z-index: 10;
+}
+
+.characters__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.App__title::after {
+  position: absolute;
+  content: ' ';
+  left: -0.25rem;
+  width: 2.5rem;
+  height: 2.75rem;
+  border-radius: 0.25rem;
+  background-color: var(--background-dark);
+  z-index: -1;
+}
+
+@keyframes title-animation {
+  0% {
+    margin-right: -10rem;
+    opacity: 0;
+  };
+  100% {
+    opacity: 0;
+    margin-right: 0;
+  };
 }
 
 .App__list {
@@ -28,7 +70,8 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 4rem;
+  padding: 2rem;
+  margin: 0 0 2rem 0;
 }
 
 .App__item {
@@ -36,10 +79,6 @@
   margin-right: 2rem;
   margin-bottom: 2rem;
   cursor: pointer;
-}
-
-.App__item:last-child {
-  margin: 0;
 }
 
 .App__content {

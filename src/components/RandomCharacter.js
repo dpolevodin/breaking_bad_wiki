@@ -11,7 +11,7 @@ class RandomCharacter extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch('https://www.breakingbadapi.com/api/character/random')
+        fetch(`https://www.breakingbadapi.com/api/character/random`)
                 .then(response => response.json())
                 .then(result => {
                     this.setState({character: result})
@@ -27,7 +27,7 @@ class RandomCharacter extends React.Component {
         return (
             <div className="App__random-character">
                 {this.state.character.map((item) => 
-                    <RandomCharacterCard {...item} />
+                    <RandomCharacterCard {...item} key={item.char_id}/>
                     )
                 }
                 <Button text='Get another character!' onClick={this.handleClick}/>

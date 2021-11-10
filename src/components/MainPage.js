@@ -1,7 +1,5 @@
 import CharactersList from "./CharactersList"
 import RandomCharacter from "./RandomCharacter"
-import Button from "./Button"
-
 
 function MainPage({page}) {
     const navItems = ['Random Character', 'Characters', 'Episodes', 'Quote', 'Search']
@@ -15,7 +13,11 @@ function MainPage({page}) {
             )
         },
         'Characters': function() {
-            return <CharactersList/>
+            return (
+                <div>
+                    <CharactersList/>
+                </div>
+            )
         },
         'Episodes': function() {
             return <div>{navItems[2]}</div>

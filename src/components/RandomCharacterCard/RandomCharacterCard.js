@@ -22,11 +22,36 @@ const RandomCharacterCard = ({
             </div>
             <div className="back">
                 <ul className="character-card-random__list">
-                    <li className="character-card-random__item"><b>Real name:</b> {name}</li>
-                    <li className="character-card-random__item"><b>Birthday:</b> {birthday || 'unknown'}</li>
-                    <li className="character-card-random__item"><b>Occupation:</b> {occupation[0]}</li>
-                    <li className={ statusClassMapping[status] || "character-card-random__item"}><b>Status:</b> {status}</li>
-                    <li className="character-card-random__item"><b>Portrayed:</b> {portrayed}</li>
+                    <li className="character-card-random__item">
+                        <b>Real name:</b>
+                        <span className="character-card-random__text">
+                            {name}
+                        </span>
+                    </li>
+                    <li className="character-card-random__item">
+                        <b>Birthday:</b>
+                        <span className="character-card-random__text">
+                            {birthday || 'unknown'}
+                        </span>
+                    </li>
+                    <li className="character-card-random__item">
+                        <b>Occupation:</b> 
+                        <span className="character-card-random__text">
+                            {occupation[0]}
+                        </span>
+                    </li>
+                    <li className={ statusClassMapping[status] || "character-card-random__item"}>
+                        <b>Status:</b>
+                        <span className="character-card-random__text">
+                            {status}
+                        </span>
+                    </li>
+                    <li className="character-card-random__item">
+                        <b>Portrayed:</b>
+                        <span className="character-card-random__text">
+                            {portrayed}
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,10 +1,12 @@
 import '../src/css/reset.css';
 import '../src/css/App.css';
-import '../src/css/CharacterCard.css';
+import '../src/components/CharacterCard/CharacterCard.css';
 import '../src/components/RandomCharacterCard/RandomCharacterCard.css'
+import '../src/components/Pagination/Pagination.css'
 import NavigationItems from '../src/components/NavigationItems';
 import MainPage from '../src/components/MainPage'
 import { useState } from 'react';
+import MainTitle from './components/MainTitle';
 
 function App() {
   const [navItem, setNavItem] = useState('Random Character')
@@ -21,7 +23,7 @@ function App() {
           <NavigationItems />
       </div>
       <div className="App__content">
-        <h1 className="App__title">Welcome to Breaking bad WIKI!</h1>
+        <MainTitle />
         <MainPage page={navItem}/> 
       </div>
     </div>

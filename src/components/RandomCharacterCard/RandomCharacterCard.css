@@ -7,6 +7,9 @@
     --background-color: rgba(0, 0, 0, 0.315);
     --background-bright: rgb(255, 153, 0);
     --header-height: 16rem;
+    --status-color-red: red;
+    --status-color-green: green;
+    --status-color-orange: orange;
   }
 
 .character-card__wrapper {
@@ -85,19 +88,30 @@
 .character-card-random__item {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     margin-bottom: 2rem;
+    font-size: 1rem;
 }
 
 .character-card-random__item_green {
-    color: green;
+    color: var(--status-color-green);
 }
 
 .character-card-random__item_red {
-    color: red;
+    color: var(--status-color-red);
 }
 
 .character-card-random__item_orange {
-    color: orange;
+    color: var(--status-color-orange)
+}
+
+.character-card-random__text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 50%;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
