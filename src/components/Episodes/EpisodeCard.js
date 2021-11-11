@@ -20,7 +20,7 @@ const EpisodeCard = ({
     // )
     const cells = []
     for (let i = 0; i < 10; i++) {
-        cells.push(<li className="episode__block-mov-cell"></li>)
+        cells.push(<li className="episode__block-mov-cell" key={i}></li>)
     }
 
     return (
