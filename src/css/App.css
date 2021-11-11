@@ -79,8 +79,8 @@ body {
 
 .App__item {
   display: flex;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
   cursor: pointer;
 }
 

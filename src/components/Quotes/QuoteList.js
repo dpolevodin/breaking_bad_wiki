@@ -32,9 +32,9 @@ class QuoteList extends React.Component {
         e.preventDefault();
         const searchValue = document.getElementById('searchQuote').value
         this.setState({quoteAuthor: searchValue})
-        return this.componentDidMount()
+        this.componentDidMount(searchValue)
     }
-            
+
     render() {
         return (
             <div className="blockquote__list">
