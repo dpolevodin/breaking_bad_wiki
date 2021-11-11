@@ -1,14 +1,19 @@
 .blockquote__list {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 60rem;
+}
+
+.blockquote__list .loading-element {
+    right: 56rem;
 }
 
 .character-image {
     position: fixed;
     display: flex;
     right: 4.5rem;
-    top: 12.5rem;
+    top: 14.85rem;
     width: 20rem;
     border: 0.5rem solid var(--background-white);
 }
