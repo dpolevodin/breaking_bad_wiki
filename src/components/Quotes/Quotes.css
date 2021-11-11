@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+.character-image {
+    display: flex;
+    width: 10rem;
+}
+
 blockquote {
     position: relative;
     display: flex;

@@ -3,7 +3,7 @@ import { useState } from "react"
 function NavigationItems() {
     const [navItem, setNavItem] = useState('Random Character')
 
-    const navigationItemsData = ['Random Character', 'Characters', 'Episodes', 'Quote', 'Search']
+    const navigationItemsData = ['Random Character', 'Characters', 'Episodes', 'Quotes', 'Search']
 
     const navigationItems = navigationItemsData.map((item) => {
       return (

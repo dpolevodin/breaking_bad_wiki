@@ -5,7 +5,7 @@ import QuoteList from './Quotes/QuoteList'
 
 
 function MainPage({page}) {
-    const navItems = ['Random Character', 'Characters', 'Episodes', 'Quote', 'Search']
+    const navItems = ['Random Character', 'Characters', 'Episodes', 'Quotes', 'Search']
 
     const renderMapping = {
         'Random Character': function() {
@@ -25,7 +25,7 @@ function MainPage({page}) {
         'Episodes': function() {
             return <div><EpisodeList /></div>
         },
-        'Quote': function() {
+        'Quotes': function() {
             return <div><QuoteList /></div>
         },
         'Search': function() {
