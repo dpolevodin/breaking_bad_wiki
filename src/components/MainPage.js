@@ -1,6 +1,7 @@
 import CharactersList from "./CharactersList"
 import RandomCharacter from "./RandomCharacter"
 import EpisodeList from "./Episodes/EpisodeList"
+import QuoteList from './Quotes/QuoteList'
 
 
 function MainPage({page}) {
@@ -25,7 +26,7 @@ function MainPage({page}) {
             return <div><EpisodeList /></div>
         },
         'Quote': function() {
-            return <div>{navItems[3]}</div>
+            return <div><QuoteList /></div>
         },
         'Search': function() {
             return <div>{navItems[4]}</div>

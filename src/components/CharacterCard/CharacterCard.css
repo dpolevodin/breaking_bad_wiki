@@ -17,8 +17,8 @@
     padding: 1rem;
     border-radius: 0.75rem;
     border: 0.25rem solid transparent;
-    background-color: var(--card-white);
-    color: var(--card-black);
+    background-color: var(--background-dark);
+    color: var(--background-white);
     box-shadow: 0 0.5rem 2rem var(--shadow-color), 0 0.25rem 0.5rem var(--shadow-color), 0 0.125rem 0.125rem var(--shadow-color);
 }
 
@@ -37,12 +37,12 @@
     display: flex;
     width: 4rem;
     border-radius: 0.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     transition-duration: 0.4s;
 }
 
 .character-card:hover .character-card__img {
-    width: 16rem;
+    width: 12rem;
     box-shadow: 0 0.5rem 2rem var(--shadow-color-dark), 0 0.25rem 0.5rem var(--shadow-color-dark), 0 0.125rem 0.125rem var(--shadow-color-dark);
 }
 
@@ -61,6 +61,19 @@
 
 .character-card__text {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     line-height: 1rem;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.character-card__text:last-child {
+    margin: 0;
+}
+
+.character-card__text strong {
+    margin-right: 0.5rem;
+    font-weight: normal;
 }
