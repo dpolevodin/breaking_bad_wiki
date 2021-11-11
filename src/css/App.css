@@ -95,7 +95,7 @@ body {
 
 .App__navigation {
   position: fixed;
-  left: -35vh;
+  left: -18vw;
   display: flex;
   flex: 1 0 20%;
   flex-direction: column;
