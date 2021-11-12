@@ -6,6 +6,28 @@
     width: 100%;
 }
 
+.episodes-pagintaion__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.25rem;
+    margin-bottom: 2rem;
+}
+
+
+.episodes-pagintaion__wrapper b {
+    display: flex;
+    justify-content: flex-end;
+    width: 10rem;
+}
+
+.episodes-pagintaion__wrapper .pagination {
+    width: 24rem;
+    padding: 0 1.5rem 0 0;
+    justify-content: flex-end;
+}
+
 .episode__list-mov {
     display: flex;
     flex-direction: column;

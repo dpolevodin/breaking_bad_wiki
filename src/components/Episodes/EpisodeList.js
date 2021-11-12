@@ -9,7 +9,7 @@ class EpisodeList extends React.Component {
       super(props);
       this.state = {
           episodes: [],
-          episodes2: [],
+          episodesToRender: [],
           currentPage: 0,
           isLoading: false,
           buttonCounts: [1, 2, 3, 4, 5],
@@ -21,7 +21,7 @@ class EpisodeList extends React.Component {
         const seasonByCount = this.state.episodes.filter(item => item.season === seasonCount)
         console.log(seasonByCount)
         this.setState({
-            episodes2: seasonByCount,
+            episodesToRender: seasonByCount,
         })
     }
 
@@ -32,7 +32,7 @@ class EpisodeList extends React.Component {
                 .then(result => {
                     this.setState({
                         episodes: result,
-                        episodes2: result,
+                        episodesToRender: result,
                         isLoading: false
                     })
                 }
@@ -41,16 +41,21 @@ class EpisodeList extends React.Component {
     
     render() {
         return (
-            <div className="episodes__wrapper">
+            <div>
+                <div className="episodes-pagintaion__wrapper">
+                    <b>select season:</b>
+                    <Pagination onClick={this.handleChangeSeason} buttonCounts={this.state.buttonCounts}/>
+                </div>
+                <div className="episodes__wrapper">
                 {this.state.isLoading && (<Loading />)}
-
-                <Pagination onClick={this.handleChangeSeason} buttonCounts={this.state.buttonCounts}/>
-
-                {this.state.episodes2.map((item) => 
+                
+                {this.state.episodesToRender.map((item) => 
                     <EpisodeCard {...item} key={item.episode_id}/>
                     )
                 }
             </div>
+            </div>
+           
         )
 }
 }
