@@ -10,6 +10,7 @@ class CharactersList extends React.Component {
           characters: [],
           currentPage: 0,
           isLoading: false,
+          buttonCounts: [1, 2, 3, 4, 5, 6, 7],
       }
     }
 
@@ -44,7 +45,7 @@ class CharactersList extends React.Component {
                     )
                 }
                 </ul>
-                <Pagination onClick={this.handleButton}/>
+                <Pagination onClick={this.handleButton} buttonCounts={this.state.buttonCounts}/>
             </div>
         )
 }

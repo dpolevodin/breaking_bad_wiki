@@ -1,5 +1,7 @@
-const Pagination = ({onClick}) => {
-    const buttonCounts = [1, 2, 3, 4, 5, 6, 7]
+const Pagination = ({
+    onClick,
+    buttonCounts
+    }) => {
     const buttonElement = buttonCounts.map((item) => {
         return (
             <li className="pagination__item" key={item}>

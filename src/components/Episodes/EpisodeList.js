@@ -1,6 +1,7 @@
 import React from 'react'
 import EpisodeCard from "./EpisodeCard"
 import Loading from '../Loading';
+import Pagination from "../Pagination/Pagination"
 
 
 class EpisodeList extends React.Component {
@@ -8,15 +9,20 @@ class EpisodeList extends React.Component {
       super(props);
       this.state = {
           episodes: [],
+          episodes2: [],
           currentPage: 0,
           isLoading: false,
+          buttonCounts: [1, 2, 3, 4, 5],
       }
     }
 
-    handleButton = (event) => {
-        const offsetCount = event.target.innerText * 10 - 10
-        this.setState({currentPage: offsetCount})
-        this.componentDidMount(offsetCount)
+    handleChangeSeason = (event) => {
+        const seasonCount = event.target.innerText
+        const seasonByCount = this.state.episodes.filter(item => item.season === seasonCount)
+        console.log(seasonByCount)
+        this.setState({
+            episodes2: seasonByCount,
+        })
     }
 
     componentDidMount = () => {
@@ -26,17 +32,21 @@ class EpisodeList extends React.Component {
                 .then(result => {
                     this.setState({
                         episodes: result,
+                        episodes2: result,
                         isLoading: false
                     })
                 }
                 )
-            }    
+            }
     
     render() {
         return (
             <div className="episodes__wrapper">
                 {this.state.isLoading && (<Loading />)}
-                {this.state.episodes.map((item) => 
+
+                <Pagination onClick={this.handleChangeSeason} buttonCounts={this.state.buttonCounts}/>
+
+                {this.state.episodes2.map((item) => 
                     <EpisodeCard {...item} key={item.episode_id}/>
                     )
                 }
