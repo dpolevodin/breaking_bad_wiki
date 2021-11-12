@@ -11,7 +11,7 @@ class QuoteList extends React.Component {
       this.state = {
             quotes: [],
             isLoading: false,
-            quoteAuthor: '',
+            quoteAuthor: [],
             characterImage: [],
       }
     }
@@ -20,9 +20,6 @@ class QuoteList extends React.Component {
         e.preventDefault();
         let test = document.getElementById('formQuote')
         const searchValue = test.value
-        // var e = document.getElementById("elementId");
-        // var value = e.options[e.selectedIndex].value;
-        // const searchValue = document.getElementById('searchQuote').value
         const url = (searchValue === 'all characters') ? 'quotes' : `quote?author=${searchValue}`
 
         this.setState({isLoading: true})
@@ -31,7 +28,7 @@ class QuoteList extends React.Component {
                 .then(result => {
                     this.setState({
                         quotes: result,
-                        isLoading: false
+                        isLoading: false,
                     })
                 }
                 )
@@ -48,6 +45,7 @@ class QuoteList extends React.Component {
 
     componentDidMount = () => {
         this.setState({isLoading: true})
+
         fetch(`https://www.breakingbadapi.com/api/quotes`)
                 .then(response => response.json())
                 .then(result => {

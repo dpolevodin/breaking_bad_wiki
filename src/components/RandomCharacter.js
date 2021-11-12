@@ -14,6 +14,18 @@ class RandomCharacter extends React.Component {
 
     componentDidMount = () => {
         this.setState({isLoading: true})
+        if (this.state.character.length === 0) {
+            fetch(`https://breakingbadapi.com/api/characters?name=Walter+White`)
+                .then(response => response.json())
+                .then(result => {
+                    this.setState({
+                        character: result,
+                        isLoading: false
+                    })
+                }
+                )
+        }
+
         fetch(`https://www.breakingbadapi.com/api/character/random`)
                 .then(response => response.json())
                 .then(result => {

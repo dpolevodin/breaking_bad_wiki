@@ -73,6 +73,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 96rem;
   padding: 2rem;
   margin: 0 0 2rem 0;
 }
@@ -199,7 +200,7 @@ body {
 }
 
 .main-page__button:hover {
-  border: 0.0825rem solid var(--background-light);
+  border: 0.0825rem solid var(--loading-element-light);
   box-shadow: 0 0 4rem var(--background-shadow-navitem);
   animation: none;
 }

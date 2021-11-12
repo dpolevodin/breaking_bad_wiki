@@ -2,24 +2,21 @@ import CharactersList from "./CharactersList"
 import RandomCharacter from "./RandomCharacter"
 import EpisodeList from "./Episodes/EpisodeList"
 import QuoteList from './Quotes/QuoteList'
+import RandomDeathList from './Deaths/RandomDeathList'
 
 
 function MainPage({page}) {
-    const navItems = ['Random Character', 'Characters', 'Episodes', 'Quotes', 'Search']
+    const navItems = ['Random Character', 'Characters', 'Episodes', 'Quotes', 'Deaths']
 
     const renderMapping = {
         'Random Character': function() {
             return (
-                <div>
-                   <RandomCharacter />
-                </div>
+                <div><RandomCharacter /></div>
             )
         },
         'Characters': function() {
             return (
-                <div>
-                    <CharactersList/>
-                </div>
+                <div><CharactersList/></div>
             )
         },
         'Episodes': function() {
@@ -28,8 +25,8 @@ function MainPage({page}) {
         'Quotes': function() {
             return <div><QuoteList /></div>
         },
-        'Search': function() {
-            return <div>{navItems[4]}</div>
+        'Deaths': function() {
+            return <div><RandomDeathList /></div>
         },
     }
  

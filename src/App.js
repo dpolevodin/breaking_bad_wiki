@@ -5,6 +5,7 @@ import '../src/components/RandomCharacterCard/RandomCharacterCard.css'
 import '../src/components/Pagination/Pagination.css'
 import '../src/components/Episodes/Episode.css'
 import '../src/components/Quotes/Quotes.css'
+import '../src/components/Deaths/RandomDeathCard.css'
 
 import NavigationItems from '../src/components/NavigationItems';
 import MainPage from '../src/components/MainPage'

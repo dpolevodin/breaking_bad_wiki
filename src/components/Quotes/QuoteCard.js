@@ -1,14 +1,19 @@
 const QuoteCard = ({
     quote,
     author,
+    last_words = false
 }) => {
     return (
         <blockquote>
-            <p>{quote}</p>
-            <footer>
-            — 
-            <cite> {author} </cite>
-            </footer>
+            {last_words && (<p>Last words: </p>)}
+            <p className="quote-card__title">{quote}</p>
+            {!last_words && (
+                <footer>
+                    — 
+                    <cite>{author}</cite>
+                </footer>
+            )}
+           
         </blockquote>
     )
 }
