@@ -20,6 +20,7 @@
     top: 14.85rem;
     width: 20rem;
     border: 0.5rem solid var(--background-white);
+    z-index: 20;
 }
 
 blockquote {
