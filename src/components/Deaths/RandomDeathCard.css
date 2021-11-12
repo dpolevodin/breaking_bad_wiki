@@ -38,6 +38,7 @@
     width: 16rem;
     border: 0.5rem solid var(--background-dark);
     margin-bottom: 2rem;
+    filter: grayscale(100%);
 }
 
 .death-card__wrapper p, cite, blockquote {
