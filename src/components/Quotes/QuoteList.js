@@ -13,13 +13,14 @@ class QuoteList extends React.Component {
             isLoading: false,
             quoteAuthor: [],
             characterImage: [],
+            authorsList: []
       }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let test = document.getElementById('formQuote')
-        const searchValue = test.value
+        const formValue = document.getElementById('formQuote')
+        const searchValue = formValue.value
         const url = (searchValue === 'all characters') ? 'quotes' : `quote?author=${searchValue}`
 
         this.setState({isLoading: true})
@@ -32,6 +33,7 @@ class QuoteList extends React.Component {
                     })
                 }
                 )
+
         if (searchValue !== '') {
             fetch(`https://www.breakingbadapi.com/api/characters?name=${searchValue}`)
             .then(response => response.json())
@@ -51,17 +53,19 @@ class QuoteList extends React.Component {
                 .then(result => {
                     this.setState({
                         quotes: result,
-                        isLoading: false
+                        isLoading: false,
+                        authorsList: result,
                     })
                 }
                 )
             }
     
     getNoDoubleAuthor = () => {
-        const authorData = this.state.quotes.map(
+        const authorData = this.state.authorsList.map(
             item => item.author
         )
         authorData.unshift('all characters')
+        console.log([...new Set(authorData)]) 
         return [...new Set(authorData)]
     }
 
