@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CharacterCard from './CharacterCard/CharacterCard'
 import Pagination from "./Pagination/Pagination"
 import Loading from "./Loading"
+import RandomCharacterCard from './RandomCharacterCard/RandomCharacterCard';
 
 class CharactersList extends React.Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class CharactersList extends React.Component {
                 {this.state.characters.map((item) => 
                     <li className="App__item" key={item.char_id.toString()}>
                     <CharacterCard {...item} />
+                    {/* <RandomCharacterCard {...item} /> */}
                     </li>
                     )
                 }

@@ -59,12 +59,11 @@ body {
 
 @keyframes title-animation {
   0% {
-    margin-right: -10rem;
+    transform: translate(10rem);
     opacity: 0;
   };
   100% {
-    opacity: 0;
-    margin-right: 0;
+    opacity: 1;
   };
 }
 

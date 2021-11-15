@@ -1,5 +1,5 @@
 import CharactersList from "./CharactersList"
-import RandomCharacter from "./RandomCharacter"
+import RandomCharacter from "./RandomCharacterCard/RandomCharacterList"
 import EpisodeList from "./Episodes/EpisodeList"
 import QuoteList from './Quotes/QuoteList'
 import RandomDeathList from './Deaths/RandomDeathList'
