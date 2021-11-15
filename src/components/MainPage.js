@@ -6,7 +6,6 @@ import RandomDeathList from './Deaths/RandomDeathList'
 
 
 function MainPage({page}) {
-    const navItems = ['Random Character', 'Characters', 'Episodes', 'Quotes', 'Deaths']
 
     const renderMapping = {
         'Random Character': function() {

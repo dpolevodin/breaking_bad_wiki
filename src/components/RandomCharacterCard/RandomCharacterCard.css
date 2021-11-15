@@ -12,6 +12,32 @@
     --status-color-orange: orange;
   }
 
+.App__list .character-card__wrapper {
+    width: 14rem;
+    min-height: 18rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+.App__list .character-card-random__title {
+    font-size: 1rem;
+}
+
+.App__list .character-card-random__list {
+    padding: 0.25rem;
+}
+
+.App__list .character-card-random__item {
+    font-size: 0.75rem;
+    margin: 0 0 1rem 0;
+}
+
+.App__list .character-card__img {
+    max-width: 80%;
+
+}
+
 .character-card__wrapper {
     display: flex;
     position: relative;
@@ -84,6 +110,7 @@
     width: 100%;
     height: 100%;
 }
+
 
 .character-card-random__item {
     display: flex;

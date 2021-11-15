@@ -41,8 +41,8 @@ class CharactersList extends React.Component {
                 <ul className="App__list">
                 {this.state.characters.map((item) => 
                     <li className="App__item" key={item.char_id.toString()}>
-                    <CharacterCard {...item} />
-                    {/* <RandomCharacterCard {...item} /> */}
+                    {/* <CharacterCard {...item} /> */}
+                    <RandomCharacterCard {...item} />
                     </li>
                     )
                 }

@@ -72,8 +72,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 96rem;
-  padding: 2rem 0 0 0;
+  max-width: 80rem;
+  padding: 0;
   margin: 0;
 }
 
@@ -107,6 +107,7 @@ body {
   background-color: var(--background-dark);
   transition-duration: 0.4s;
   box-shadow: 0 0.5rem 2rem var(--background-shadow), 0 0.25rem 0.5rem var(--background-shadow), 0 0.125rem 0.125rem var(--background-shadow);
+  z-index: 20;
 }
 
 .App__navigation:hover {

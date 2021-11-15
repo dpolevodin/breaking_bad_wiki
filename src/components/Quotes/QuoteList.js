@@ -65,7 +65,6 @@ class QuoteList extends React.Component {
             item => item.author
         )
         authorData.unshift('all characters')
-        console.log([...new Set(authorData)]) 
         return [...new Set(authorData)]
     }
 
@@ -84,7 +83,7 @@ class QuoteList extends React.Component {
                 </form>
                 
                 {this.state.characterImage.map((item) => 
-                    <CharacterImage {...item} key={item.id}/>
+                    <CharacterImage {...item} key={item.char_id}/>
                     )
                 }
 

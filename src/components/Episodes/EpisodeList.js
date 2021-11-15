@@ -19,7 +19,6 @@ class EpisodeList extends React.Component {
     handleChangeSeason = (event) => {
         const seasonCount = event.target.innerText
         const seasonByCount = this.state.episodes.filter(item => item.season === seasonCount)
-        console.log(seasonByCount)
         this.setState({
             episodesToRender: seasonByCount,
         })
