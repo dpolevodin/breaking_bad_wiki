@@ -212,7 +212,7 @@ body {
 .loading-element {
   position: absolute;
   display: flex;
-  top: 8rem;
+  top: 7rem;
 }
 
 .svgIcon {
